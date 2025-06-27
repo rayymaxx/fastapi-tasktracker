@@ -52,3 +52,13 @@ def create_task(task: TaskCreate):
     return new_task
 
 
+@app.get("/tasks", response_model=List[Task])
+def get_tasks(status: Optional[Status] = None, priority: Optional[Priority] = None):
+    result = tasks
+    if status:
+        result = [task for task in result if task.status == status]
+    if priority:
+        result = [task for task in result if task.priority == priority]
+    return result
+
+
