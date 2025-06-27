@@ -62,3 +62,10 @@ def get_tasks(status: Optional[Status] = None, priority: Optional[Priority] = No
     return result
 
 
+@app.put("/tasks/{id}", response_model=Task)
+def update_task(id: int, updated_task: TaskUpdate):
+    for i, task in enumerate(tasks):
+        if task.id == id:
+            tasks[i] = Task(id=id, created_at=task.created_at, **updated_task.dict())
+            return tasks[i]
+    raise HTTPException(status_code=404, detail="Task not found")
