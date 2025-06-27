@@ -8,11 +8,11 @@ This is a simple task manager backend API built with FastAPI for freelancers.
 - Filters for status and priority
 - Swagger UI for interactive testing
 
-## Live Demo
-https://fastapi-tasktracker.vercel.app/
+## 🚀 Live Demo  
+[fastapi-tasktracker.vercel.app](https://fastapi-tasktracker.vercel.app/)
 
-## 📘 Docs (Swagger UI): 
-https://fastapi-tasktracker.vercel.app/docs
+## 📘 Swagger Docs  
+[fastapi-tasktracker.vercel.app/docs](https://fastapi-tasktracker.vercel.app/docs)
 
 ## 🚀 Run Locally
 
