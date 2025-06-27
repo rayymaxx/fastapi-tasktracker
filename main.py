@@ -69,3 +69,12 @@ def update_task(id: int, updated_task: TaskUpdate):
             tasks[i] = Task(id=id, created_at=task.created_at, **updated_task.dict())
             return tasks[i]
     raise HTTPException(status_code=404, detail="Task not found")
+
+
+@app.delete("/tasks/{id}", status_code=204)
+def delete_task(id: int):
+    for i, task in enumerate(tasks):
+        if task.id == id:
+            del tasks[i]
+            return
+    raise HTTPException(status_code=404, detail="Task not found")
