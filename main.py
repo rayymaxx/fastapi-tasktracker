@@ -37,3 +37,18 @@ class Task(TaskBase):
 # In-memory storage
 tasks: List[Task] = []
 task_id_counter = 1
+
+
+@app.post("/tasks", response_model=Task, status_code=201)
+def create_task(task: TaskCreate):
+    global task_id_counter
+    new_task = Task(
+        id=task_id_counter,
+        created_at=datetime.utcnow(),
+        **task.dict()
+    )
+    tasks.append(new_task)
+    task_id_counter += 1
+    return new_task
+
+
