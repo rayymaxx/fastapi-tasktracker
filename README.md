@@ -51,3 +51,8 @@ This is a simple task manager backend API built with FastAPI for freelancers.
   "status": "pending",
   "priority": "high"
 }
+
+
+🚀 **Live Demo**: [https://fastapi-tasktracker.vercel.app/](https://fastapi-tasktracker.vercel.app/)
+
+📘 **Docs** (Swagger UI): [https://fastapi-tasktracker.vercel.app/docs](https://fastapi-tasktracker.vercel.app/docs)
